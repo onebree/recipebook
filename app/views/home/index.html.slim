@@ -1,5 +1,7 @@
 h1 Recipe Book
 
+= link_to "New recipe", new_recipe_path
+
 - @recipes.each do |recipe|
   h2= recipe.title
   p= recipe.instruction
