@@ -4,4 +4,8 @@ h1 Recipe Book
 
 - @recipes.each do |recipe|
   h2= recipe.title
+  div
+    = link_to "Edit", edit_recipe_path(recipe)
+    = " | "
+    = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
   p= recipe.instruction
