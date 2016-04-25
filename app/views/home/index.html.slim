@@ -3,9 +3,13 @@ h1 Recipe Book
 = link_to "New recipe", new_recipe_path
 
 - @recipes.each do |recipe|
-  h2= recipe.title
-  div
-    = link_to "Edit", edit_recipe_path(recipe)
-    = " | "
-    = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
-  p= recipe.instruction
+  .row
+    .col-md-8
+      h2= recipe.title
+    .col-md-4
+      div style="margin-top: 20px; margin-bottom: 10px;"
+        = link_to "Show", recipe_path(recipe)
+        = " | "
+        = link_to "Edit", edit_recipe_path(recipe)
+        = " | "
+        = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }

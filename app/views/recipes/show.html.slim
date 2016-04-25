@@ -1,0 +1,10 @@
+h2= @recipe.title
+
+h3 Instructions
+
+p= @recipe.instruction
+
+p.text-center
+  = link_to "Edit", edit_recipe_path(@recipe)
+  = " | "
+  = link_to "Back", root_path

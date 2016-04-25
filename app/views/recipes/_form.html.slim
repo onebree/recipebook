@@ -1,4 +1,4 @@
 = bootstrap_form_for @recipe do |f|
   = f.text_field :title
-  = f.text_area :instruction
+  = f.text_area :instruction, rows: 20
   = f.submit "Save", class: "btn btn-success"
