@@ -1,0 +1,8 @@
+toolbar:
+  - undo redo | styleselect | bold italic underline | bullist numlist outdent indent | link image table
+plugins:
+  - image
+  - link
+  - table
+menubar: false
+statusbar: false

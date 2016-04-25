@@ -2,7 +2,7 @@ h2= @recipe.title
 
 h3 Instructions
 
-p= @recipe.instruction
+p= @recipe.instruction.html_safe
 
 p.text-center
   = link_to "Edit", edit_recipe_path(@recipe)

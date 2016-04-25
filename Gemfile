@@ -19,7 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
-gem 'kramdown'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'byebug'
