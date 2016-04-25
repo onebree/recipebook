@@ -1,15 +1,17 @@
 h1 Recipe Book
 
-= link_to "New recipe", new_recipe_path
+br
 
-- @recipes.each do |recipe|
-  .row
-    .col-md-8
-      h2= recipe.title
-    .col-md-4
-      div style="margin-top: 20px; margin-bottom: 10px;"
-        = link_to "Show", recipe_path(recipe)
-        = " | "
-        = link_to "Edit", edit_recipe_path(recipe)
-        = " | "
-        = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
+table.table
+  tbody
+    - @recipes.each do |recipe|
+      tr
+        td
+          h2= recipe.title
+        td  
+          div class="text-right" style="margin-top: 20px;"
+            = link_to "Show", recipe_path(recipe)
+            = " | "
+            = link_to "Edit", edit_recipe_path(recipe)
+            = " | "
+            = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
