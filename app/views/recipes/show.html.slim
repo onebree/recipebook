@@ -1,3 +1,6 @@
+p.text-center
+  = link_to "Print recipe", "/recipes/#{@recipe.id}.pdf", class: "btn btn-default"
+
 h1.page-header= @recipe.title
 
 = @recipe.compiled_instructions.html_safe

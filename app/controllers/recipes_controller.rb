@@ -1,6 +1,15 @@
 class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        filename   = @recipe.title.parameterize + ".pdf"
+        markdown   = "# #{@recipe.title}\n\n#{@recipe.instructions}"
+        pdf_output = Kramdown::Document.new(markdown).to_pdf
+        send_data  pdf_output, filename: filename, type: 'application/pdf'
+      end
+    end
   end
   
   def new
@@ -33,6 +42,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to root_path
+  end
+
+  def print
+    @recipe = Recipe.find(params[:id])
   end
 
   private

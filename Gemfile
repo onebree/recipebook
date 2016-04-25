@@ -21,6 +21,8 @@ gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'kramdown'
 gem 'textacular'
+gem 'prawn'
+gem 'prawn-table'
 
 group :development, :test do
   gem 'byebug'
@@ -30,4 +32,3 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
