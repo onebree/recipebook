@@ -1,8 +1,8 @@
-h2= @recipe.title
+h1.page-header= @recipe.title
 
-h3 Instructions
+= @recipe.compiled_instructions.html_safe
 
-p= @recipe.instruction.html_safe
+br
 
 p.text-center
   = link_to "Edit", edit_recipe_path(@recipe)
