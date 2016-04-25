@@ -2,16 +2,28 @@ h1 Recipe Book
 
 br
 
-table.table
-  tbody
-    - @recipes.each do |recipe|
-      tr
-        td
-          h2= recipe.title
-        td  
-          div class="text-right" style="margin-top: 20px;"
-            = link_to "Show", recipe_path(recipe)
-            = " | "
-            = link_to "Edit", edit_recipe_path(recipe)
-            = " | "
-            = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
+= bootstrap_form_tag do |f|
+  = f.text_field :search, value: params[:search], skip_label: true, append: button_to("Search", root_path, class: "btn btn-default")
+
+br
+
+- if @recipes.empty?
+  h2.text-center No recipes found
+- else
+  table.table
+    tbody
+      - @recipes.each do |recipe|
+        tr
+          td
+            h2= recipe.title
+          td  
+            div class="text-right" style="margin-top: 20px;"
+              = link_to "Show", recipe_path(recipe)
+              = " | "
+              = link_to "Edit", edit_recipe_path(recipe)
+              = " | "
+              = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
+
+- unless params[:search].nil?
+  br
+  .text-center= link_to "Back", root_path

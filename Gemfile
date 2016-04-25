@@ -20,6 +20,7 @@ gem 'slim'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'kramdown'
+gem 'textacular'
 
 group :development, :test do
   gem 'byebug'

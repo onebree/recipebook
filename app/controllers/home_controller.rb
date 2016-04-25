@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @recipes = Recipe.order(:title)
+    if params[:search]
+      @recipes = Recipe.search(params[:search]).order(:title)
+    else
+      @recipes = Recipe.order(:title)
+    end
   end
 end
