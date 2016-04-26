@@ -16,7 +16,7 @@ br
           td
             h3 style="margin-top: 5px;"
               = link_to recipe.title, recipe_path(recipe)
-            p How bout a gosh darn quesadilla? Side of rice and beans, please. I think I've overdosed on tacos. Pico de gallo, on the side please. 
+            p= recipe.description
 
 - unless params[:search].blank?
   br
