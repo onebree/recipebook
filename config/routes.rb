@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   match "/", to: "home#index", via: [:get, :post]
 
   resources :recipes,    only: [:new, :create, :edit, :update, :destroy, :show]
-  resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:index, :new, :create, :edit, :update, :destroy, :show]
 end

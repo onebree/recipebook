@@ -3,6 +3,11 @@ class CategoriesController < ApplicationController
     @categories = Category.order(:name)
   end
 
+  def show
+    @category = Category.find(params[:id])
+    @recipes = @category.recipes.order(:title)
+  end
+
   def new
     @category = Category.new
   end
