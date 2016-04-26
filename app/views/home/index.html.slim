@@ -24,6 +24,6 @@ br
               = " | "
               = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
 
-- unless params[:search].nil?
+- unless params[:search].blank?
   br
   .text-center= link_to "Back", root_path
