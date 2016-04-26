@@ -1,7 +1,3 @@
-h1 Recipe Book
-
-br
-
 = bootstrap_form_tag do |f|
   = f.text_field :search, value: params[:search], skip_label: true, append: button_to("Search", root_path, class: "btn btn-default")
 
@@ -15,14 +11,12 @@ br
       - @recipes.each do |recipe|
         tr
           td
-            h2= recipe.title
-          td  
-            div class="text-right" style="margin-top: 20px;"
-              = link_to "Show", recipe_path(recipe)
-              = " | "
-              = link_to "Edit", edit_recipe_path(recipe)
-              = " | "
-              = link_to "Destroy", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }
+            a href="#" class="thumbnail" style="margin-bottom: 0px;"
+              = image_tag "placeholder.png", size: "80x80"
+          td
+            h3 style="margin-top: 5px;"
+              = link_to recipe.title, recipe_path(recipe)
+            p How bout a gosh darn quesadilla? Side of rice and beans, please. I think I've overdosed on tacos. Pico de gallo, on the side please. 
 
 - unless params[:search].blank?
   br
