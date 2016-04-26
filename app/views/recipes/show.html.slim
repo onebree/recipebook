@@ -3,8 +3,9 @@ p.text-center
 
 h1.page-header= @recipe.title
 
-blockquote
-  p= @recipe.description
+- unless @recipe.description.blank?
+  blockquote
+    p= @recipe.description
 
 = @recipe.compiled_instructions.html_safe
 
