@@ -7,9 +7,12 @@ nav.navbar.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      / <a class="navbar-brand" href="#">Brand</a>
       = link_to "Recipe Book", root_path, class: "navbar-brand"
 
     / Collect the nav links, forms, and other content for toggling
     div class="collapse navbar-collapse" id="navbar-collapse"
-      = link_to "New recipe", new_recipe_path, class: "btn btn-default navbar-btn"
+      ul class="nav navbar-nav"
+        li= link_to "Categories", categories_path
+        li
+          form
+            = link_to "New recipe", new_recipe_path, class: "btn btn-default navbar-btn"
