@@ -11,6 +11,4 @@
           td
             h3 style="margin-top: 5px;"
               = link_to recipe.title, recipe_path(recipe)
-            - if recipe.categories.any?
-              = render partial: "recipes/categories", locals: { recipe: recipe }
             = render partial: "recipes/data", locals: { recipe: recipe }

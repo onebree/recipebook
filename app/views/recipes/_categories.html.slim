@@ -1,5 +1,5 @@
 p
   - recipe.categories.each do |category|
-    span.label.label-primary style="margin-right: 5px;"
-      = link_to category.name, category_path(category)
+    span style="margin-right: 5px;"
+      = link_to category.name, category_path(category), class: "btn btn-default btn-sm"
 
