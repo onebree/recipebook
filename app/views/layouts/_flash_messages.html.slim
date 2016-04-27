@@ -1,0 +1,3 @@
+- flash.each do |type, msg|
+  div class="alert #{flash_class(type)} text-center" role="alert"
+    = msg.html_safe

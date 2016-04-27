@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @recipes = @category.recipes.order(:title)
+    @recipes = @category.recipes.where(archived: false).order(:title)
   end
 
   def new
