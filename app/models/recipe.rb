@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
 
   attachment :image
 
-  validates_presence_of :title, :directions
+  validates_presence_of :title, :directions, :ingredients
 
   def compile
     write_attribute(:compiled_ingredients, Kramdown::Document.new(ingredients).to_html)

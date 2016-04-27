@@ -1,10 +1,10 @@
 p
-  - if recipe.calories
+  - unless recipe.calories.blank?
     span style="margin-right: 20px;"
       = fa_icon("bar-chart", text: "#{recipe.calories} cal")
-  - if recipe.time
+  - unless recipe.time.blank?
     span style="margin-right: 20px;"
       = fa_icon("clock-o", text: recipe.time)
-  - if recipe.yield
+  - unless recipe.yield.blank?
     span
       = fa_icon("spoon", text: recipe.yield)
