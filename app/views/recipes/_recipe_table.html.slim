@@ -5,10 +5,9 @@
     tbody
       - recipes.each do |recipe|
         tr
-          td
-            - if recipe.image
-              div class="thumbnail" style="margin-bottom: 0px;"
-                = image_tag attachment_url(recipe, :image), size: "80x80"
+          td style="width: 100px;"
+            div class="thumbnail" style="margin-bottom: 0px;"
+              = attachment_image_tag(recipe, :image, :fill, 90, 90, fallback: "placeholder.png")
           td
             h3 style="margin-top: 5px;"
               = link_to recipe.title, recipe_path(recipe)
