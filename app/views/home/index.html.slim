@@ -3,22 +3,7 @@
 
 br
 
-- if @recipes.empty?
-  h2.text-center No recipes found
-- else
-  table.table
-    tbody
-      - @recipes.each do |recipe|
-        tr
-          td
-            - if recipe.image
-              div class="thumbnail" style="margin-bottom: 0px;"
-                = image_tag attachment_url(recipe, :image), size: "80x80"
-          td
-            h3 style="margin-top: 5px;"
-              = link_to recipe.title, recipe_path(recipe)
-            - if recipe.categories.any?
-              = render partial: "recipes/categories", locals: { recipe: recipe }
+= render partial: "recipes/recipe_table", locals: { recipes: @recipes }
 
 - unless params[:search].blank?
   br
