@@ -3,14 +3,31 @@ p.text-center
 
 h1.page-header= @recipe.title
 
+- if @recipe.categories.any?
+  = render partial: "categories", locals: { recipe: @recipe }
 
-- unless @recipe.categories.empty?
-  ul.list-unstyled
-    - @recipe.categories.each do |category|
-      li style="display: inline-block; margin-right: 15px;"
-        = link_to category.name, category_path(category)
+p
+  - if @recipe.calories
+    span style="margin-right: 20px;"
+      = fa_icon("bar-chart", text: "#{@recipe.calories} cal")
+  - if @recipe.time
+    span style="margin-right: 20px;"
+      = fa_icon("clock-o", text: @recipe.time)
+  - if @recipe.yield
+    span
+      = fa_icon("spoon", text: @recipe.yield)
 
-= @recipe.compiled_instructions.html_safe
+h2 Ingredients
+= @recipe.compiled_ingredients.html_safe
+
+h2 Directions
+= @recipe.compiled_directions.html_safe
+
+h2 Notes
+= @recipe.compiled_notes.html_safe
+
+- if @recipe.source
+  p= link_to @recipe.source, @recipe.source
 
 br
 

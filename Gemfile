@@ -24,6 +24,7 @@ gem 'textacular'
 gem 'prawn'
 gem 'prawn-table'
 gem 'refile', require: 'refile/rails'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'refile-s3'
