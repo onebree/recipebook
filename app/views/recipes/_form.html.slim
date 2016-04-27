@@ -1,6 +1,12 @@
 = bootstrap_form_for @recipe do |f|
   = f.text_field :title
   = f.collection_select :category_ids, Category.order(:name), :id, :name, { }, { multiple: true }
-  = f.text_area :instructions, rows: 20
+  = f.text_field :calories
+  = f.text_field :yield
+  = f.text_field :time
+  = f.text_area :ingredients, rows: 15
+  = f.text_area :directions, rows: 10
+  = f.text_area :notes, rows: 5
+  = f.text_field :source
   p= f.attachment_field :image
   = f.submit "Save", class: "btn btn-success"
