@@ -11,8 +11,9 @@ br
       - @recipes.each do |recipe|
         tr
           td
-            a href="#" class="thumbnail" style="margin-bottom: 0px;"
-              = image_tag "placeholder.png", size: "80x80"
+            - if recipe.image
+              a href="#" class="thumbnail" style="margin-bottom: 0px;"
+                = image_tag attachment_url(recipe, :image), size: "80x80"
           td
             h3 style="margin-top: 5px;"
               = link_to recipe.title, recipe_path(recipe)

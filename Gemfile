@@ -23,6 +23,7 @@ gem 'kramdown'
 gem 'textacular'
 gem 'prawn'
 gem 'prawn-table'
+gem 'refile', require: 'refile/rails'
 
 group :development, :test do
   gem 'byebug'
