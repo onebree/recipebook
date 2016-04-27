@@ -25,6 +25,10 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'refile', require: 'refile/rails'
 
+group :production do
+  gem 'refile-s3'
+end
+
 group :development, :test do
   gem 'byebug'
 end
