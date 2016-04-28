@@ -26,6 +26,7 @@ gem 'prawn-table'
 gem 'refile', require: 'refile/rails'
 gem 'refile-mini_magick'
 gem 'font-awesome-rails'
+gem 'tinymce-rails'
 
 group :production do
   gem 'refile-s3'

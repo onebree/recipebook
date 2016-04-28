@@ -173,6 +173,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    tinymce-rails (4.3.8)
+      railties (>= 3.1.1)
     ttfunk (1.4.0)
     turbolinks (2.5.3)
       coffee-rails
@@ -210,6 +212,7 @@ DEPENDENCIES
   slim
   spring
   textacular
+  tinymce-rails
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

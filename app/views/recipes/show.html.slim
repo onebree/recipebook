@@ -22,7 +22,7 @@ h2 Directions
 br
 
 p.text-center
-  = link_to "Edit", edit_recipe_path(@recipe)
+  = link_to "Edit", edit_recipe_path(@recipe), data: { no_turbolink: true }
   = " | "
   = link_to "Delete", recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" }
   = " | "

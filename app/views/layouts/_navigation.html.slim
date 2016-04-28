@@ -15,4 +15,4 @@ nav.navbar.navbar-default
         li= link_to "Categories", categories_path
         li
           form
-            = link_to "New recipe", new_recipe_path, class: "btn btn-default navbar-btn"
+            = link_to "New recipe", new_recipe_path, class: "btn btn-default navbar-btn", data: { no_turbolink: true }

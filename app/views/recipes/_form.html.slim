@@ -4,9 +4,11 @@
   = f.text_field :calories
   = f.text_field :yield
   = f.text_field :time
-  = f.text_area :ingredients, rows: 15
-  = f.text_area :directions, rows: 10
-  = f.text_area :notes, rows: 5
+  = f.text_area :ingredients, rows: 15, class: "tinymce"
+  = f.text_area :directions, rows: 10, class: "tinymce"
+  = f.text_area :notes, rows: 5, class: "tinymce"
   = f.text_field :source
   p= f.attachment_field :image
   = f.submit "Save", class: "btn btn-success"
+
+  = tinymce
