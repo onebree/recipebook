@@ -6,3 +6,9 @@ plugins:
   - table
 menubar: false
 statusbar: false
+setup :
+  function(ed) {
+    ed.on('init', function() {
+      this.getDoc().body.style.fontSize = '14px';
+    });
+  }
