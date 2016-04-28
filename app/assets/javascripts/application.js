@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require tinymce
+//= require select2
 //= require_tree .

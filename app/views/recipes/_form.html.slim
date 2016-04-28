@@ -1,6 +1,12 @@
 = bootstrap_form_for @recipe do |f|
   = f.text_field :title
-  = f.collection_select :category_ids, Category.order(:name), :id, :name, { }, { multiple: true }
+  .form-group
+    label.control-label Category
+    = select_tag "categories", options_for_select(Category.pluck(:name).sort), multiple: true, class: "form-control"
+    p
+      div class="btn-group" role="group"
+        button id="reset" type="button" class="btn btn-default btn-sm" Reset
+        button id="clear" type="button" class="btn btn-default btn-sm" Clear
   = f.text_field :calories
   = f.text_field :yield
   = f.text_field :time
@@ -12,3 +18,12 @@
   = f.submit "Save", class: "btn btn-success"
 
   = tinymce
+
+javascript:
+  $(document).on("page:change", function() { 
+    $("#categories").select2({
+      theme: "bootstrap",
+      placeholder: "Select a category",
+      tags: true
+    })
+  });

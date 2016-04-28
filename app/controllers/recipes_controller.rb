@@ -62,6 +62,12 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit!
+    new_params = params.require(:recipe).permit!
+    new_params.merge(recipe_categories)
+  end
+
+  def recipe_categories
+    categories = params[:categories].map { |c| Category.find_or_create_by(name: c).id }
+    { category_ids: categories }
   end
 end
