@@ -3,10 +3,6 @@
   .form-group
     label.control-label Category
     = select_tag "categories", options_for_select(Category.pluck(:name).sort), multiple: true, class: "form-control"
-    p
-      div class="btn-group" role="group"
-        button id="reset" type="button" class="btn btn-default btn-sm" Reset
-        button id="clear" type="button" class="btn btn-default btn-sm" Clear
   = f.text_field :calories
   = f.text_field :yield
   = f.text_field :time
@@ -27,3 +23,5 @@ javascript:
       tags: true
     })
   });
+  var categories = #{{ @recipe.categories.pluck(:name).sort }};
+  $("#categories").select2().val(categories);
