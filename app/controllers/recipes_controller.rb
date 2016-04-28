@@ -67,7 +67,12 @@ class RecipesController < ApplicationController
   end
 
   def recipe_categories
-    categories = params[:categories].map { |c| Category.find_or_create_by(name: c).id }
+    categories = 
+      if params[:categories]
+        params[:categories].map { |c| Category.find_or_create_by(name: c).id }
+      else
+        []
+    end
     { category_ids: categories }
   end
 end
