@@ -1,6 +1,3 @@
-p.text-center
-  = link_to "Save recipe", "/recipes/#{@recipe.id}.pdf", class: "btn btn-default"
-
 h1.page-header= @recipe.title
 
 - if @recipe.categories.any?
@@ -9,15 +6,16 @@ h1.page-header= @recipe.title
 = render partial: "data", locals: { recipe: @recipe }
 
 h2 Ingredients
-= @recipe.compiled_ingredients.html_safe
+= @recipe.ingredients.html_safe
 
 h2 Directions
-= @recipe.compiled_directions.html_safe
+= @recipe.directions.html_safe
 
 - unless @recipe.notes.blank? && @recipe.source.blank?
   h2 Notes
-  = @recipe.compiled_notes.html_safe
-  p= link_to @recipe.source, @recipe.source
+  = @recipe.notes.html_safe
+  - unless @recipe.source.blank?
+    p= link_to @recipe.source, @recipe.source
 
 br
 
