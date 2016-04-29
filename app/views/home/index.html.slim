@@ -1,10 +1,17 @@
-= bootstrap_form_tag do |f|
-  = f.text_field :search, value: params[:search], skip_label: true, append: button_to("Search", root_path, class: "btn btn-default")
+p.text-center
+  = link_to 'New Category', new_category_path, class: "btn btn-default"
 
 br
 
-= render partial: "recipes/recipe_table", locals: { recipes: @recipes }
-
-- unless params[:search].blank?
-  br
-  .text-center= link_to "Back", root_path
+- @categories.each_slice(3).each do |slice|
+  .row
+    - slice.each do |category|
+      .col-md-4
+        .panel.panel-default
+          .panel-body
+            h3 style="margin-top: 0px;"
+              = link_to category.name, category_path(category)
+          .panel-footer
+            = link_to "Edit", edit_category_path(category)
+            = " | "
+            = link_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?" }

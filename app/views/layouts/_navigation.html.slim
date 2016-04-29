@@ -1,18 +1,24 @@
 nav.navbar.navbar-default
-  div class="container-fluid"
+  div class="container"
     / Brand and toggle get grouped for better mobile display
-    div class="navbar-header"
-      button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to "Recipe Book", root_path, class: "navbar-brand"
+    .row
+      .col-md-2
+      .col-md-8
+        div class="navbar-header"
+          button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to fa_icon("home fw", text: "Recipe Book"), root_path, class: "navbar-brand"
 
-    / Collect the nav links, forms, and other content for toggling
-    div class="collapse navbar-collapse" id="navbar-collapse"
-      ul class="nav navbar-nav"
-        li= link_to "Categories", categories_path
-        li
-          form
-            = link_to "New recipe", new_recipe_path, class: "btn btn-default navbar-btn", data: { no_turbolink: true }
+        / Collect the nav links, forms, and other content for toggling
+        div class="collapse navbar-collapse" id="navbar-collapse"
+          .navbar-form.navbar-left
+            = bootstrap_form_tag url: search_path, method: :get do |f|
+              = f.text_field :search, value: params[:search], skip_label: true, placeholder: "Search"
+          ul class="nav navbar-nav navbar-right"
+            li
+              form
+                = link_to fa_icon("plus fw", text: "Add recipe"), new_recipe_path, class: "btn btn-default navbar-btn", data: { no_turbolink: true }
+      .col-md-2
