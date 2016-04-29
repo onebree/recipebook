@@ -1,4 +1,7 @@
-h1= "Recipes under \"#{@category.name}\""
+h1
+  = "Recipes under \"#{@category.name}\""
+  .pull-right
+    = link_to fa_icon("pencil fw", text: "Edit"), edit_category_path(@category.id), class: "btn btn-default btn-sm"
 
 br
 
