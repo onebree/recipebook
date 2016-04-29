@@ -18,6 +18,6 @@ br
     .panel.panel-default
       .panel-body
         h3 style="margin-top: 0px;"
-          = link_to "Unsorted", search_path(search: "unsorted")
+          = link_to "Unsorted", search_path(search: "unsorted recipes")
       .panel-footer
         = pluralize(Recipe.unsorted.count, "recipe")
