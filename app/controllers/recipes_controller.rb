@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to root_path
+      redirect_to recipe_path(@recipe)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update_attributes(recipe_params)
-      redirect_to root_path
+      redirect_to recipe_path(@recipe)
     else
       render :edit
     end
