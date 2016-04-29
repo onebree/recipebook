@@ -1,3 +1,5 @@
 h1 Results for "#{params[:search]}"
 
+br
+
 = render partial: "recipes/recipe_table", locals: { recipes: @recipes }

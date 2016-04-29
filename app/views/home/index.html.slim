@@ -12,6 +12,12 @@ br
             h3 style="margin-top: 0px;"
               = link_to category.name, category_path(category)
           .panel-footer
-            = link_to "Edit", edit_category_path(category)
-            = " | "
-            = link_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?" }
+            = pluralize(category.recipes.count, "recipe")
+.row
+  .col-md-4
+    .panel.panel-default
+      .panel-body
+        h3 style="margin-top: 0px;"
+          = link_to "Unsorted", search_path(search: "unsorted")
+      .panel-footer
+        = pluralize(Recipe.unsorted.count, "recipe")

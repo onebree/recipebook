@@ -3,5 +3,7 @@ class Recipe < ActiveRecord::Base
 
   attachment :image
 
+  scope :unsorted, -> { where(archived: false).select { |x| x.categories.empty? } }
+
   validates_presence_of :title, :directions, :ingredients
 end
