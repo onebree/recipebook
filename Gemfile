@@ -27,6 +27,7 @@ gem 'refile-mini_magick'
 gem 'font-awesome-rails'
 gem 'tinymce-rails'
 gem 'select2-rails'
+gem 'bcrypt'
 
 group :production do
   gem 'refile-s3'
