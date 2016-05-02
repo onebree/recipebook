@@ -1,0 +1,10 @@
+h1 Log in
+
+= bootstrap_form_for(:session, url: login_path) do |f|
+  = f.email_field :email
+  = f.password_field :password
+  = f.submit "Log in", class: "btn btn-primary"
+
+br
+
+p New user? #{link_to "Sign up now!", signup_path}

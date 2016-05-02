@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :users,      only: [:create]
 
   get "/recipes/:id/restore" => "recipes#restore", as: :restore_recipe
-  get "/search" => "home#search", as: :search
-  get "/signup" => "users#new",   as: :signup
+  get "search" => "home#search"
+  get "signup" => "users#new"
+
+  get    "login"  => "sessions#new"
+  post   "login"  => "sessions#create"
+  delete "logout" => "sessions#destroy"
 end
