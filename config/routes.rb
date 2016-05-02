@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :recipes,    only: [:new, :create, :edit, :update, :destroy, :show]
   resources :categories, only: [:index, :new, :create, :edit, :update, :destroy, :show]
-  resources :users,      only: [:index]
+  resources :users,      only: [:create]
 
   get "/recipes/:id/restore" => "recipes#restore", as: :restore_recipe
   get "/search" => "home#search", as: :search
