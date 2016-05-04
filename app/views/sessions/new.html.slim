@@ -3,6 +3,7 @@ h1 Log in
 = bootstrap_form_for(:session, url: login_path) do |f|
   = f.email_field :email
   = f.password_field :password
+  = f.check_box :remember_me, label: "Remember me on this computer"
   = f.submit "Log in", class: "btn btn-primary"
 
 br
