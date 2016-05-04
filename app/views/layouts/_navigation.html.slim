@@ -21,4 +21,8 @@ nav.navbar.navbar-default
             li
               form
                 = link_to fa_icon("plus fw", text: "Add recipe"), new_recipe_path, class: "btn btn-default navbar-btn", data: { no_turbolink: true }
+            - if logged_in?
+              li= link_to "Log out", logout_path, method: :delete
+            - else
+              li= link_to "Log in", login_path
       .col-md-2
