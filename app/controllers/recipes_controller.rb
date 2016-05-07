@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update, :destroy, :restore]
+
   def show
     @recipe = Recipe.find(params[:id])
   end
@@ -61,5 +63,12 @@ class RecipesController < ApplicationController
         []
     end
     { category_ids: categories }
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_path
+    end
   end
 end
