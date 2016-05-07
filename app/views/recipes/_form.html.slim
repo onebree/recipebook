@@ -11,8 +11,9 @@
   = f.text_area :notes, rows: 5, class: "tinymce"
   = f.text_field :source
   p= f.attachment_field :image
-  = f.submit "Save", class: "btn btn-success"
 
+  = f.submit yield(:button_text), class: "btn btn-success"
+  
   = tinymce
 
 javascript:
