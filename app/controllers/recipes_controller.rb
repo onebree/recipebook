@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.update_attributes(archived: true)
-    flash[:alert] = %Q(
+    flash[:warning] = %Q(
       You have deleted the recipe "#{@recipe.title}". Please
       <a href="#{restore_recipe_path(@recipe.id)}">click here</a> to restore it.
     )
@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
   def restore
     @recipe = Recipe.find(params[:id])
     @recipe.update_attributes(archived: false)
-    flash[:notice] = "You have successfully restored \"#{@recipe.title}\"."
+    flash[:success] = "You have successfully restored \"#{@recipe.title}\"."
     redirect_to root_path
   end
 

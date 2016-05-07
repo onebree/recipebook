@@ -1,7 +1,4 @@
-p.text-center
-  = link_to 'New Category', new_category_path, class: "btn btn-default"
-
-br
+- provide(:title, "All categories")
 
 - @categories.each_slice(3).each do |slice|
   .row
@@ -21,3 +18,8 @@ br
           = link_to "Unsorted", search_path(search: "unsorted recipes")
       .panel-footer
         = pluralize(Recipe.unsorted.count, "recipe")
+
+br
+
+p.text-center
+  = link_to 'New Category', new_category_path, class: "btn btn-default"
